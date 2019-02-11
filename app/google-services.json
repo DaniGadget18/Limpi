@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "563087054746",
+    "firebase_url": "https://limpi-66e8e.firebaseio.com",
+    "project_id": "limpi-66e8e",
+    "storage_bucket": "limpi-66e8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563087054746:android:e646c1855e0cc8b1",
+        "android_client_info": {
+          "package_name": "com.example.limpi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563087054746-u71pudv6mgnv07fej0ei2n8nj2mspht1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdh7U4yeN6gq0kz4UxyaHC4h4m5qkiEIA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
