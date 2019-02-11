@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:text="¿Olvidaste tu constraseña?"
             android:layout_below="@+id/editTextpassword"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="60dp"/>
 
         <TextView
@@ -64,6 +65,7 @@
             android:layout_height="match_parent"
             android:text=" Recuperalá"
             android:textColor="#1491FF"
+            android:layout_marginTop="10dp"
             android:layout_below="@id/editTextpassword"
             android:layout_marginLeft="230dp"
             />

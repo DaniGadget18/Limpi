@@ -16,8 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference MainDatabaseReference = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference dateroot = MainDatabaseReference.child("texto");
+
 
     TextView email;
     EditText correo, password;
@@ -30,23 +29,6 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextpassword);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        dateroot.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String texto = dataSnapshot.getValue().toString();
-                email.setText(texto);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 
 
 }

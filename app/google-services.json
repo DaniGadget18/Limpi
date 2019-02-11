@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "563087054746",
-    "firebase_url": "https://limpi-66e8e.firebaseio.com",
-    "project_id": "limpi-66e8e",
-    "storage_bucket": "limpi-66e8e.appspot.com"
+    "project_number": "473459980895",
+    "firebase_url": "https://limpi-8ef09.firebaseio.com",
+    "project_id": "limpi-8ef09",
+    "storage_bucket": "limpi-8ef09.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:563087054746:android:e646c1855e0cc8b1",
+        "mobilesdk_app_id": "1:473459980895:android:e646c1855e0cc8b1",
         "android_client_info": {
           "package_name": "com.example.limpi"
         }
       },
       "oauth_client": [
         {
-          "client_id": "563087054746-u71pudv6mgnv07fej0ei2n8nj2mspht1.apps.googleusercontent.com",
+          "client_id": "473459980895-4bcdqf95fjmn7t02o5k1nqrn0o116tnk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.limpi",
+            "certificate_hash": "17b1756f9890db43992d454d99db7236a989385d"
+          }
+        },
+        {
+          "client_id": "473459980895-fvmi5iri3stimvb3ohi41pqf54utcvgd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCdh7U4yeN6gq0kz4UxyaHC4h4m5qkiEIA"
+          "current_key": "AIzaSyAWQrUDEC7gDb8h7IC4zDm_LAf_orUDebM"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473459980895-fvmi5iri3stimvb3ohi41pqf54utcvgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
