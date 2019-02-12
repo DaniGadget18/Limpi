@@ -4,9 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".InicioSesion"
     android:background="#E5E5E5">
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/imagotipolimpi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -58,9 +64,10 @@
             android:text="¿Olvidaste tu constraseña?"
             android:layout_below="@+id/editTextpassword"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="60dp"/>
+            android:layout_marginLeft="50dp"/>
 
         <TextView
+            android:id="@+id/recuperar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text=" Recuperalá"
