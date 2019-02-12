@@ -20,9 +20,8 @@ public class InicioSesion extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_sesion);
 
         String fuente = "font/trebucbd.ttf";
-        String fuentetwo = "font/trebuchetms.ttf";
+
         this.fuente1 = Typeface.createFromAsset(getAssets(),fuente);
-        this.fuente2 = Typeface.createFromAsset(getAssets(),fuentetwo);
 
         fontemail = findViewById(R.id.email);
         fontemail.setTypeface(fuente1);
@@ -32,17 +31,9 @@ public class InicioSesion extends AppCompatActivity {
         fontforgotcontra.setTypeface(fuente1);
         fontrecuperar = findViewById(R.id.recuperar);
         fontrecuperar.setTypeface(fuente1);
-
-
     }
-
-
     public void registrarusuario(View view) {
-         Intent registro = new Intent( );
-         switch (view.getId())
-         {
-             case R.id.registrarusu:
-                 startActivities(registro);
-         }
+         Intent registro = new Intent(this, RegistroUsuario.class);
+         startActivity(registro);
     }
 }
