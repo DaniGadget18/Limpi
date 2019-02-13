@@ -29,8 +29,6 @@ public class RegistroUsuario extends AppCompatActivity {
 
         edad = findViewById(R.id.edades);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.activity_registro_usuario,edad);
-        edad.setAdapter(adapter);
 
 
 
