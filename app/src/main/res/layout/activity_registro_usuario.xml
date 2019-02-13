@@ -45,7 +45,7 @@
 
             <ImageView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_above="@id/cargarimagen"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="-57dp"
@@ -69,98 +69,108 @@
                     android:layout_below="@+id/cargarimagen"
                     android:text="NOMBRES(S)"/>
                 <EditText
+                    android:id="@+id/editnombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
                     android:background="@drawable/editextbordes"/>
                 <TextView
-                    android:id="@+id/fontnombres"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/fontapellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
+                    android:text="APELLIDO"/>
+                <EditText
+                    android:id="@+id/editapellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fontapellidos"
+                    android:background="@drawable/editextbordes"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/fontemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CORREO ELECTRONICO"/>
+                <EditText
+                    android:id="@+id/editemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/editextbordes"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/fontpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CONTRASEÑA"/>
+                <EditText
+                    android:id="@+id/editpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/editextbordes"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/fontconfpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CONFIRMAR CONTRASEÑA"/>
+                <EditText
+                    android:id="@+id/editconfpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/editextbordes"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EDAD"/>
+                        <Spinner
+                            android:id="@+id/edades"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/dropdownstyle"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="SEXO"/>
+                        <Spinner
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/dropdownstyle"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DIRECCIÓN PARA RECOGER LA ROPA"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
-                <TextView
-                    android:id="@+id/fontnombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cargarimagen"
-                    android:text="NOMBRES(S)"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fontnombres"
-                    android:background="@drawable/editextbordes"/>
+                    android:background="@drawable/editextbordes"
+                    android:layout_marginBottom="20dp"/>
+
+
             </LinearLayout>
 
         </RelativeLayout>
