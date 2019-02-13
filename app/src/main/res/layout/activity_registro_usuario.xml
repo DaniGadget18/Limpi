@@ -16,13 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/partearriba">
-
-
             <View
                 android:id="@+id/barra"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/designbarra" />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/limpiblanco"
+                android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:id="@+id/bienvenido"

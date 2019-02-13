@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recuperarContrasena">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/partearriba">
+        <View
+            android:id="@+id/barra"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/designbarra" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/limpiblanco"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/partearriba"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/fontrecuperatucontra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recupera tu contraseña"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textSize="23sp"/>
+
+        <TextView
+            android:id="@+id/fontextorecuperar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textorecuperarcontra"
+            android:layout_marginTop="30dp"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/fontpassenv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTRASEÑA ENVIADA"
+            android:layout_marginTop="40dp" />
+
+        <EditText
+            android:id="@+id/editpassenv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editextbordes"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:hint="Escribe aqui la contraseña que llego a tu correo"/>
+
+        <TextView
+            android:id="@+id/fontpassnew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTRASEÑA NUEVA"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/editpassnew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editextbordes"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:hint="Escribe tu nueva contraseña deseada"/>
+
+        <TextView
+            android:id="@+id/fontpassconf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONFIRMAR CONTRASEÑA"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/editpassconf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editextbordes"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:hint="Escribe nuevamente la contraseña"/>
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/boton_plano"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:id="@+id/btnregistrate"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

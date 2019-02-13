@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Limpi</string>
+    <string name="textorecuperarcontra">Te enviamos un correo con una nueva contraseña, escribela en el recuadro de abajo y cambiala por una contraseña nueva</string>
 </resources>
