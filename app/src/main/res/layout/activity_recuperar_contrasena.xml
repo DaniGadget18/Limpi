@@ -17,9 +17,9 @@
             android:background="@drawable/designbarra" />
 
         <ImageView
-            android:layout_marginTop="10dp"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
             android:background="@drawable/limpiblanco"
             android:layout_centerHorizontal="true"/>
     </RelativeLayout>
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/editextbordes"
             android:padding="10dp"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:hint="Escribe aqui la contraseña que llego a tu correo"/>
 
         <TextView

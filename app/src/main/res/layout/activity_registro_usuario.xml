@@ -23,9 +23,9 @@
                 android:background="@drawable/designbarra" />
 
             <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
                 android:background="@drawable/limpiblanco"
                 android:layout_centerHorizontal="true"/>
 
@@ -140,6 +140,7 @@
                         android:orientation="vertical"
                         android:layout_weight="2">
                         <TextView
+                            android:id="@+id/fontedad"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="EDAD"/>
@@ -158,6 +159,7 @@
                         android:orientation="vertical"
                         android:layout_weight="2">
                         <TextView
+                            android:id="@+id/fontsexo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -173,6 +175,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/fontdire"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

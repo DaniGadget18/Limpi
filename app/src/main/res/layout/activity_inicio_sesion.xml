@@ -78,6 +78,7 @@
             android:textSize="12sp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/editTextpassword"
+            android:onClick="recuperapass"
             android:layout_marginLeft="220dp"
             />
 
@@ -113,5 +114,11 @@
             android:layout_marginLeft="220dp"
             android:textSize="12sp"
             android:onClick="registrarusuario"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textofirebase"/>
     </RelativeLayout>
 </RelativeLayout>
