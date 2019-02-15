@@ -59,7 +59,7 @@
             android:id="@+id/editpassenv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/editextbordes"
+            android:background="@drawable/shadow"
             android:padding="10dp"
             android:textSize="13sp"
             android:hint="Escribe aqui la contraseña que llego a tu correo"/>
@@ -75,7 +75,7 @@
             android:id="@+id/editpassnew"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/editextbordes"
+            android:background="@drawable/shadow"
             android:padding="10dp"
             android:textSize="15sp"
             android:hint="Escribe tu nueva contraseña deseada"/>
@@ -91,7 +91,7 @@
             android:id="@+id/editpassconf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/editextbordes"
+            android:background="@drawable/shadow"
             android:padding="10dp"
             android:textSize="15sp"
             android:hint="Escribe nuevamente la contraseña"/>

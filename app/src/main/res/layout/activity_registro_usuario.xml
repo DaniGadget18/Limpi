@@ -77,7 +77,7 @@
                     android:id="@+id/editnombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/editextbordes"
+                    android:background="@drawable/shadow"
                     android:padding="10dp"
                     android:hint="Escribe tu nombre"/>
                 <TextView
@@ -91,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fontapellidos"
-                    android:background="@drawable/editextbordes"
+                    android:background="@drawable/shadow"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_marginTop="10dp"
@@ -103,7 +103,7 @@
                     android:id="@+id/editemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/editextbordes"
+                    android:background="@drawable/shadow"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_marginTop="10dp"
@@ -115,7 +115,7 @@
                     android:id="@+id/editpass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/editextbordes"
+                    android:background="@drawable/shadow"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_marginTop="10dp"
@@ -127,7 +127,7 @@
                     android:id="@+id/editconfpass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/editextbordes"
+                    android:background="@drawable/shadow"
                     android:padding="10dp"/>
 
                 <LinearLayout
@@ -183,7 +183,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/editextbordes"
+                    android:background="@drawable/shadow"
                     android:layout_marginBottom="20dp"
                     android:padding="10dp"/>
 

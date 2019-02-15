@@ -4,5 +4,5 @@
         android:state_pressed="true" />
     <item android:drawable="@drawable/boton_enfocado"
         android:state_focused="true" />
-    <item android:drawable="@drawable/designbordes" />
+    <item android:drawable="@drawable/designbtn" />
 </selector>

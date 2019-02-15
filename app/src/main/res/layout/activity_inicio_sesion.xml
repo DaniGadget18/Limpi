@@ -35,7 +35,7 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             android:layout_below="@+id/email"
-            android:background="@drawable/editextbordes"
+            android:background="@drawable/shadow"
             android:textSize="12dp"
             android:padding="10dp"
             android:hint="Escribe tu dirección de correo registrada"/>
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:layout_below="@+id/password"
-            android:background="@drawable/editextbordes"
+            android:background="@drawable/shadow"
             android:hint="Escribe tu contraseña"
             android:padding="10dp"
             android:textSize="12dp"/>
