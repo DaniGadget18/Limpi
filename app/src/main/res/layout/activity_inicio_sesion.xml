@@ -66,20 +66,20 @@
             android:text="¿Olvidaste tu constraseña?"
             android:layout_below="@+id/editTextpassword"
             android:layout_marginTop="10dp"
-            android:textSize="12sp"
-            android:layout_marginLeft="70dp"/>
+            android:textSize="13sp"
+            android:layout_marginLeft="50dp"/>
 
         <TextView
             android:id="@+id/recuperar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextpassword"
-            android:layout_marginLeft="220dp"
+            android:layout_marginLeft="210dp"
             android:layout_marginTop="10dp"
             android:onClick="recuperapass"
             android:text=" Recuperalá"
             android:textColor="#1491FF"
-            android:textSize="12sp" />
+            android:textSize="13sp" />
 
         <Button
             android:layout_width="280dp"
@@ -115,20 +115,5 @@
             android:onClick="registrarusuario"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textofirebase"/>
-
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/login_button"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/forgotcontra"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="49dp"
-            android:layout_marginBottom="30dp"
-            />
     </RelativeLayout>
 </RelativeLayout>

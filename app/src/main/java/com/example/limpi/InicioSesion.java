@@ -10,7 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +31,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     EditText correo, password;
     Button login;
     String texto;
+    FirebaseAuth firebaseAuthf;
 
     FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -39,8 +44,6 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         String fuente = "font/trebucbd.ttf";
 
         this.fuente1 = Typeface.createFromAsset(getAssets(),fuente);
-
-        textfire = findViewById(R.id.textofirebase);
 
         fontemail = findViewById(R.id.email);
         fontemail.setTypeface(fuente1);
@@ -55,6 +58,8 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         login = findViewById(R.id.btniniciar);
 
         login.setOnClickListener(this);
+
+        firebaseAuthf = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -72,6 +77,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         };
 
 
+
     }
     public void registrarusuario(View view) {
          Intent registro = new Intent(this, RegistroUsuario.class);
@@ -83,11 +89,6 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         startActivity(recuperar);
     }
 
-    private void iniciarsesion(String email, String pass){
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass);
-    }
-
-
     @Override
     public void onClick(View view) {
 
@@ -95,7 +96,37 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
             case R.id.btniniciar:
                     String email = correo.getText().toString();
                     String pass = password.getText().toString();
-                    iniciarsesion(email, pass);break;
+                    Log.d("email",email);
+                    Log.d("pass",pass);
+
+                    firebaseAuthf.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful())
+                            {
+                                Toast.makeText(InicioSesion.this, "Tuvo un error", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+
+                    break;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+        firebaseAuthf.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mAuthListener != null){
+            firebaseAuthf.removeAuthStateListener(mAuthListener);
         }
     }
 }
