@@ -88,6 +88,7 @@
             android:layout_below="@id/forgotcontra"
             android:layout_centerHorizontal="true"
             android:background="@drawable/boton_plano"
+            android:onClick="secion"
             android:textColor="#FFFFFF"
             android:layout_marginTop="90dp"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"

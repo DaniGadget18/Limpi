@@ -50,6 +50,9 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     CallbackManager callbackManager;
     FirebaseAuth.AuthStateListener mAuthListener;
 
+    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener authStateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,5 +206,28 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void sesionar(View view) {
+    }
+
+    public void secion(View view) {
     }
 }
