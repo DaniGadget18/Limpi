@@ -18,9 +18,10 @@
 
 
 
-<style name="ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
 
-</style>
+    </style>
+
 
 
     <!--        <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+    <group android:checkableBehavior="single">
+    <item android:id="@+id/inicio" android:title="Mi perfil"
+        
+        />
+    <item
+        android:id="@+id/pagos"
+        android:icon="@drawable/tarjetas"
+        android:title="Metodos de pago" />
+    <item android:id="@+id/promos" android:title="Mis promos"/>
+    <item android:id="@+id/Membresias" android:title="Membresias"/>
+    <item android:id="@+id/pedidos" android:title="Pedidos"/>
+    <item android:id="@+id/mispedidos" android:title="Mis pedidos"/>
+    <item android:id="@+id/llamanos" android:title="Lamanos"  />
+    </group>
+
+</menu>
