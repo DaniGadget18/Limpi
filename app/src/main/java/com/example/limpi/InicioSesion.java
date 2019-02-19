@@ -45,13 +45,10 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     EditText correo, password;
     Button login;
     String texto;
-    FirebaseAuth firebaseAuthf;
+    FirebaseAuth firebaseAuth;
     LoginButton loginButton;
     CallbackManager callbackManager;
-    FirebaseAuth.AuthStateListener mAuthListener;
-
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener authStateListener;
+    FirebaseAuth.AuthStateListener authStateListener;
 
 
     @Override
@@ -108,9 +105,9 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        firebaseAuthf = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser(); //
@@ -140,7 +137,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
 
     private void handleFacebookToken(AccessToken accessToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-        firebaseAuthf.signInWithCredential(credential)
+        firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -173,7 +170,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
                     Log.d("email",email);
                     Log.d("pass",pass);
 
-                    firebaseAuthf.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful())
@@ -193,14 +190,14 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         super.onStart();
 
 
-        firebaseAuthf.addAuthStateListener(mAuthListener);
+        firebaseAuth.addAuthStateListener(authStateListener);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if (mAuthListener != null){
-            firebaseAuthf.removeAuthStateListener(mAuthListener);
+        if (authStateListener != null){
+            firebaseAuth.removeAuthStateListener(authStateListener);
         }
     }
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
