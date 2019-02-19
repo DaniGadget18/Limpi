@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,10 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     private Typeface fuente1, fuente2;
 
     TextView fontemail, fontpass, fontforgotcontra, fontrecuperar, textfire;
-    EditText correo, password;
+
+
+    private EditText correo;
+    private EditText contra;
     Button login;
     String texto;
     FirebaseAuth firebaseAuth;
@@ -75,7 +79,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         fontrecuperar = findViewById(R.id.recuperar);
         fontrecuperar.setTypeface(fuente1);
         correo = findViewById(R.id.editemail);
-        password = findViewById(R.id.editTextpassword);
+        contra = findViewById(R.id.editTextpassword);
         login = findViewById(R.id.btniniciar);
 
         login.setOnClickListener(this);
@@ -164,7 +168,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         switch (view.getId()){
-            case R.id.btniniciar:
+           /*case R.id.btniniciar:
                     String email = correo.getText().toString();
                     String pass = password.getText().toString();
                     Log.d("email",email);
@@ -181,7 +185,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
                     });
 
 
-                    break;
+                    break;*/
         }
     }
 
@@ -223,6 +227,30 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
 
 
     public void sesionar(View view) {
+        String email = correo.getText().toString();
+        String pass = contra.getText().toString();
+        if(TextUtils.isEmpty(email) && TextUtils.isEmpty(pass)){
+            Toast.makeText(this,"Por favor llene todos los campos",Toast.LENGTH_LONG).show();
+
+        }
+        else
+        {
+
+            firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(!task.isSuccessful())
+                    {
+                        String mensaje= task.getException().getMessage();
+                        Toast.makeText(InicioSesion.this,"Error: "+mensaje,Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        startActivity(new Intent(InicioSesion.this,home.class));
+                    }
+                }
+            });
+        }
     }
 
     public void secion(View view) {
