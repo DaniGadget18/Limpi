@@ -29,14 +29,14 @@
             android:text="CORREO ELECONTRICO" />
 
         <EditText
-            android:id="@+id/ediTextemail"
+            android:id="@+id/editemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:layout_below="@+id/email"
             android:background="@drawable/shadow"
-            android:textSize="14dp"
+            android:textSize="12dp"
             android:padding="10dp"
             android:hint="Escribe tu dirección de correo registrada"/>
 
@@ -44,9 +44,9 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CONTRASEÑA"
+            android:text="PASSWORD"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/ediTextemail"/>
+            android:layout_below="@id/editemail"/>
 
         <EditText
             android:id="@+id/editTextpassword"
@@ -57,7 +57,7 @@
             android:background="@drawable/shadow"
             android:hint="Escribe tu contraseña"
             android:padding="10dp"
-            android:textSize="14dp"/>
+            android:textSize="12dp"/>
 
         <TextView
             android:id="@+id/forgotcontra"
