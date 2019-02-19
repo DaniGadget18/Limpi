@@ -38,14 +38,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 
-public class InicioSesion extends AppCompatActivity implements View.OnClickListener {
+public class InicioSesion extends AppCompatActivity {
 
     private Typeface fuente1, fuente2;
 
     TextView fontemail, fontpass, fontforgotcontra, fontrecuperar, textfire;
 
 
-    private EditText correo;
+    private EditText corre;
     private EditText contra;
     Button login;
     String texto;
@@ -78,11 +78,11 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         fontforgotcontra.setTypeface(fuente1);
         fontrecuperar = findViewById(R.id.recuperar);
         fontrecuperar.setTypeface(fuente1);
-        correo = findViewById(R.id.editemail);
-        contra = findViewById(R.id.editTextpassword);
+        corre = (EditText) findViewById(R.id.editemail);
+        contra = (EditText)  findViewById(R.id.editTextpassword);
         login = findViewById(R.id.btniniciar);
 
-        login.setOnClickListener(this);
+        //login.setOnClickListener(this);
 
 
         FirebaseApp.initializeApp(this);
@@ -164,30 +164,17 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         startActivity(recuperar);
     }
 
-    @Override
+   /* @Override
     public void onClick(View view) {
 
         switch (view.getId()){
-           /*case R.id.btniniciar:
-                    String email = correo.getText().toString();
-                    String pass = password.getText().toString();
-                    Log.d("email",email);
-                    Log.d("pass",pass);
-
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful())
-                            {
-                                Toast.makeText(InicioSesion.this, "Tuvo un error", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+           case R.id.btniniciar:
 
 
-                    break;*/
+
+                    break;
         }
-    }
+    }*/
 
     @Override
     protected void onStart() {
@@ -227,7 +214,8 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
 
 
     public void sesionar(View view) {
-        String email = correo.getText().toString();
+
+        String email = corre.getText().toString();
         String pass = contra.getText().toString();
         if(TextUtils.isEmpty(email) && TextUtils.isEmpty(pass)){
             Toast.makeText(this,"Por favor llene todos los campos",Toast.LENGTH_LONG).show();
@@ -251,6 +239,8 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
                 }
             });
         }
+
+
     }
 
     public void secion(View view) {
