@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,18 +38,21 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 
-public class InicioSesion extends AppCompatActivity implements View.OnClickListener {
+public class InicioSesion extends AppCompatActivity {
 
     private Typeface fuente1, fuente2;
 
     TextView fontemail, fontpass, fontforgotcontra, fontrecuperar, textfire;
-    EditText correo, password;
+
+
+    private EditText corre;
+    private EditText contra;
     Button login;
     String texto;
-    FirebaseAuth firebaseAuthf;
+    FirebaseAuth firebaseAuth;
     LoginButton loginButton;
     CallbackManager callbackManager;
-    FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseAuth.AuthStateListener authStateListener;
 
 
     @Override
@@ -74,11 +78,11 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         fontforgotcontra.setTypeface(fuente1);
         fontrecuperar = findViewById(R.id.recuperar);
         fontrecuperar.setTypeface(fuente1);
-        correo = findViewById(R.id.editemail);
-        password = findViewById(R.id.editTextpassword);
+        corre = (EditText) findViewById(R.id.editemail);
+        contra = (EditText)  findViewById(R.id.editTextpassword);
         login = findViewById(R.id.btniniciar);
 
-        login.setOnClickListener(this);
+        //login.setOnClickListener(this);
 
 
         FirebaseApp.initializeApp(this);
@@ -105,9 +109,9 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        firebaseAuthf = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser(); //
@@ -137,7 +141,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
 
     private void handleFacebookToken(AccessToken accessToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-        firebaseAuthf.signInWithCredential(credential)
+        firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -160,48 +164,85 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         startActivity(recuperar);
     }
 
-    @Override
+   /* @Override
     public void onClick(View view) {
 
         switch (view.getId()){
-            case R.id.btniniciar:
-                    String email = correo.getText().toString();
-                    String pass = password.getText().toString();
-                    Log.d("email",email);
-                    Log.d("pass",pass);
+           case R.id.btniniciar:
 
-                    firebaseAuthf.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful())
-                            {
-                                Toast.makeText(InicioSesion.this, "Tuvo un error", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
 
 
                     break;
         }
-    }
+    }*/
 
     @Override
     protected void onStart() {
         super.onStart();
 
 
-        firebaseAuthf.addAuthStateListener(mAuthListener);
+        firebaseAuth.addAuthStateListener(authStateListener);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if (mAuthListener != null){
-            firebaseAuthf.removeAuthStateListener(mAuthListener);
+        if (authStateListener != null){
+            firebaseAuth.removeAuthStateListener(authStateListener);
         }
     }
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void sesionar(View view) {
+
+        String email = corre.getText().toString();
+        String pass = contra.getText().toString();
+        if(TextUtils.isEmpty(email) && TextUtils.isEmpty(pass)){
+            Toast.makeText(this,"Por favor llene todos los campos",Toast.LENGTH_LONG).show();
+
+        }
+        else
+        {
+
+            firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(!task.isSuccessful())
+                    {
+                        String mensaje= task.getException().getMessage();
+                        Toast.makeText(InicioSesion.this,"Error: "+mensaje,Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        startActivity(new Intent(InicioSesion.this,home.class));
+                    }
+                }
+            });
+        }
+
+
+    }
+
+    public void secion(View view) {
     }
 }

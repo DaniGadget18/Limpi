@@ -33,7 +33,7 @@ public class home extends AppCompatActivity {
         img1 = new ActionBarDrawerToggle(this, DL, R.string.open, R.string.close);
         DL.addDrawerListener(img1);
         img1.syncState();
-        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
     }

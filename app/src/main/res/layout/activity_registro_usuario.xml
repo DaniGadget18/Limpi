@@ -195,6 +195,7 @@
                     android:background="@drawable/boton_plano"
                     android:textColor="#FFFFFF"
                     android:id="@+id/btnregistrate"
+                    android:onClick="registrar"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="40dp"/>
             </LinearLayout>
